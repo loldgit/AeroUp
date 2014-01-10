@@ -1,3 +1,7 @@
+
+# custom file
+*.ziz*
+
 # Compiled Object files
 *.slo
 *.lo
