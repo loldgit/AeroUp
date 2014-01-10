@@ -1,6 +1,6 @@
-
 # custom file
 *.ziz*
+/build
 
 # Compiled Object files
 *.slo
