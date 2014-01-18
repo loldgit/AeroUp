@@ -23,7 +23,7 @@
 AeroUp AUTHORS file
 ===================
 
-__BARATTERO Laurent__
+__BARATTERO Laurent__         
       Company : La rue Luberlu       
       mail: laurentba<at>larueluberlu.net   
       web : http://larueluberlu.net   
