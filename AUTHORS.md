@@ -22,12 +22,13 @@
 ```
 AeroUp AUTHORS file
 ===================
-
+-------------------------------------------
 __BARATTERO Laurent__         
       Company : La rue Luberlu       
       mail: laurentba<at>larueluberlu.net   
       web : http://larueluberlu.net   
       github : https://github.com/LaurentBa   
-  
+ 
+-------------------------------------------
   
 ** See also the files THANKS and ChangeLog **
