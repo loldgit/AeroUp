@@ -1,6 +1,7 @@
 # custom file
 *.ziz*
 /build
+/dev
 
 # Compiled Object files
 *.slo
