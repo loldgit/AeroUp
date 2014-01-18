@@ -4,7 +4,7 @@ README for AeroUp 0.2
 
 AeroUp is an open source and multiplatform tool to control Ultimate (programmable light sequencing juggling props) from Aerotech Projects.
 
-there is not yet support for microsoft Window, because as i working on the core part who'll become a shared lib,
+There is not yet support for microsoft Window, because as i working on the core part who'll become a shared lib,
 and there is no support for getoptlong for Window, as a Qt gui is scheduled soon, i don't bother me.  
 
 
@@ -23,9 +23,11 @@ multithread, multiplatform gui,  and some others original features coming soon..
 
 Installation
 ============
+```
  cd AeroUp
  ./configure
  sudo make install
+```
 
 if you have boost library it will use it.
 but it should not be a problem if you don't have it.
