@@ -29,13 +29,15 @@ Installation
  sudo make install
 ```
 
-if you have boost library it will use it.
-but it should not be a problem if you don't have it.
+If you have boost library it will use it.
+But it should not be a problem if you don't have it.
 
 Documentation
 =============
+```
 man aeroup 
-or look at the man folder.
+```
+Or look at the man folder.
 
 Links
 =====
