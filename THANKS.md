@@ -24,9 +24,9 @@ AeroUp THANKS file
 ==================
 
 ----------------------------------------------------------------------------------------
-Thanks to Sylvain Garnavault,
-who gave me the low-level API for download sequences, that I failed. 
+Thanks to __Sylvain Garnavault__       
+who gave me the low-level API for download sequences, that I failed.        
+  * (Garnav) - Sylvain Garnavault -  www.cieparabole.com        
 
-  * (Garnav) - Sylvain Garnavault -  www.cieparabole.com
 ----------------------------------------------------------------------------------------
 
