@@ -10,16 +10,15 @@ and there is no support for getoptlong for Window, as a gui is scheduled soon, i
 
 Features 
 ========
-*[x] Start command 
-*[x] Test command
-*[x] Color command
-*[*] Get Serial Number command
-*[*] Set Serial Number command
-*[*] Upload glo sequences command
-*[*] checks syntax of .glo files  
-*[] multithread
-*[] multiplatform gui
-* And some others original features coming soon...
+* Start command 
+* Test command
+* Color command
+* Get Serial Number command
+* Set Serial Number command
+* Upload glo sequences command
+* checks syntax of .glo files  
+
+multithread, multiplatform gui,  and some others original features coming soon...
 
 
 Installation
