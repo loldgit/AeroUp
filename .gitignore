@@ -2,6 +2,8 @@
 *.ziz*
 /build
 /dev
+/private
+*~
 
 # Compiled Object files
 *.slo
