@@ -1,3 +1,4 @@
+```
 ////////////////////////////////////////////////////////////////////////////////////////
 //                                                                                    //
 //    Copyright (C) 2014 BARRATERO Laurent                                            //
@@ -18,11 +19,11 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.                  /////
 //                                                                                //////
 ////////////////////////////////////////////////////////////////////////////////////////
-
+```
 AeroUp NEWS file 
------------------
+================
 
-# AeroUp news for 0.2 :
-  
-  * ( commit first version on github )
+### AeroUp news for 0.2 :        
+
+  * ( commit first version on github )         
   
