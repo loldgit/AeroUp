@@ -4,6 +4,15 @@
 /dev
 /private
 *~
+autoscan.log
+config.h
+config.h.in
+configure.scan
+config.status
+config.log
+/src/.deps/
+/src/config.h
+config.h
 
 # Compiled Object files
 *.slo

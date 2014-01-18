@@ -1,0 +1,123 @@
+.\" Manpage for AeroUp.
+.\" Contact laurentba@larueluberlu.net.in to correct errors or typos.
+.TH man 1 "December 2013" "0.8" "AeroUp man page"
+
+.SH NAME
+AeroUp 
+
+.SH SYNOPSIS
+.B aeroup 
+[-t \fIserialPort] 
+[-o \fIserialPort] 
+[-c \fIred,\fIgreen\fR,\fIblue\fR,\fIserialPort\fR] 
+[-G \fIserialPort\fR]
+[-S \fIserialNumber\fR,\fIserialPort\fR]
+[-i \fIgloFile\fR]
+[-u \fIgloFile\fR,\fIserialPort\fR]
+[-U \fIglocFile\fR,\fIserialPort\fR]
+[-P]
+[-v]
+[-h]
+
+
+.SH DESCRIPTION
+AeroUp is an open source command line tool to control Ultimate (programmable light sequencing juggling props) from Aerotech Projects.
+
+.SH OPTIONS
+.TP
+\fB\-t\fR, \fB\-\-test\fR=\fIserialPort\fR
+Send a test command on dev \fIserialPort\fR.
+
+.TP
+\fB\-o\fR, \fB\-\-start=\fIserialPort\fR
+Send a start sequence command on dev \fIserialPort\fR.
+
+.TP
+\fB\-c\fR, \fB\-\-color\fR=\fIred\fR,\fIgreen\fR,\fIblue\fR,\fIserialPort\fR
+.nf
+Send a color command on dev \fIserialPort\fR.
+Colors \fIred\fR, \fIgreen\fR, \fIblue\fR can be hexadecimal or decimal value in range of [0-255] 
+hex value have to begin with 0x.
+.fi
+
+.TP
+\fB\-G\fR, \fB\-\-getSerial=\fIserialPort\fR
+get serial number on dev \fIserialPort\fR, and print it to standard output.
+
+
+.TP
+.nf
+\fB\-S\fR, \fB\-\-setSerial\fR=\fIserialNumber\fR,\fIserialPort\fR
+Set \fIserialNumber\fR on dev \fIserialPort\fR.
+32 bits value can be writen in hexadecimal (0x#) or decimal (#).
+.fi
+
+.TP
+.nf
+\fB\-i\fR, \fB\-\-verify\fR=\fIgloFile\fR
+Verify that syntax glo file is valid
+
+.TP
+.nf
+\fB\-u\fR, \fB\-\-uploadGlo\fR=\fIgloFile\fR,\fIserialPort\fR
+Verify that syntax glo file is valid and if this is the case upload it on dev \fIserialPort\fR
+
+.TP
+.nf
+\fB\-P\fR, \fB\-\-thread\fR
+Multithread mode, not implemented yet...
+
+.TP
+.nf
+\fB\-U\fR, \fB\-\-uploadGloc\fR=\fIglocFile\fR,\fIserialPort\fR
+not implemented yet...
+
+.TP
+.nf
+\fB\-v\fR
+Verbose mode
+
+.TP
+.nf
+\fB\-h\fR, \fB\-\-help\fR
+Print help
+
+.TP
+.nf
+\fB\-\-version\fR
+Print version
+.PP
+The last bootloader V2.3 from Aerotech needs to be installed first to use Serial number features.
+.br
+Each sub options have to be separate with a comma without blank.
+
+
+.SH EXAMPLES
+aeroup -t /dev/ttyACM0
+.br
+aeroup -o /dev/ttyACM0 -o /dev/ttyACM1 -t /dev/ttyACM3
+.br
+aeroup -c 255,69,255,/dev/ttyACM0 27,3,7,/dev/ttyACM1
+.br
+aeroup -S 0x0b01/dev/ttyACM0
+.br
+aeroup -G /dev/ttyACM0
+.br
+
+
+.SH SEE ALSO
+AeroUp project page : https://github.com/LaurentBa/AeroUp
+.br
+AeroWrite project page : https://github.com/LaurentBa/AeroWrite
+\#.SH BUGS
+\#No known bugs.
+.SH AUTHOR
+Written by Laurent Barattero (laurent@larueluberlu.net.in)
+
+.SH COPYRIGHT
+Copyright © 2013 BARATTERO Laurent
+License GPLv3+: GNU GPL  version 3 or later <http://gnu.org/licenses/gpl.html>.
+.br
+This  is  free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+

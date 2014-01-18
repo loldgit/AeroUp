@@ -1,0 +1,72 @@
+<HTML>
+<HEAD>
+<TITLE>AeroUp Man Page</TITLE>
+</HEAD>
+<BODY>
+<H1>AeroUp Man Page</H1>
+<HR>
+<PRE>
+<!-- Manpage converted by man2html 3.0.1 -->
+
+SYNOPSIS
+       aeroup  [-t  serialPort]  [-o  serialPort]  [-c red,green,blue,serialPort] [-G serialPort] [-S serialNumber,serialPort] [-i gloFile] [-u gloFile,serialPort] [-U gloc‐
+       File,serialPort] [-v] [-P]
+
+DESCRIPTION
+       AeroUp is an open source tool to use with Ultimate (programmable light sequencing juggling props) from Aerotech Projects.
+
+OPTIONS
+       -t, --test=serialPort
+              Send a test command on dev serialPort.
+
+       -o, --start=serialPort
+              Send a start sequence command on dev serialPort.
+
+       -c, --color=red,green,blue,serialPort
+              Send a color command on dev serialPort.
+              Each sub options have to be separate with a comma without blank.
+              Colors red, green, blue can be hexadecimal or decimal value in range of [0-255]
+              hex value have to begin with 0x.
+
+       -G, --getSerial=serialPort
+              get serial number on dev serialPort, and print it to standard output.
+
+       -S, --setSerial=serialNumber,serialPort
+              Set serialNumber on dev serialPort.
+              32 bits value can be writen in hexadecimal (0x#) binary (0b#) or decimal (#).
+
+       -i, --verify=gloFile
+              Verify that syntax glo file is valid
+
+       -u, --verify=gloFile,serialPort
+              Verify that syntax glo file is valid and if this is the case upload it on dev serialPort
+
+       -P, --thread
+              Multithread mode, not implemented yet...
+
+       -u, --verify=glocFile,serialPort
+              not implemented yet...
+
+       aeroup -c 255,69,255,/dev/ttyACM0 27,3,7,/dev/ttyACM1
+       aeroup -S 0x0b01/dev/ttyACM0
+       aeroup -G /dev/ttyACM0
+
+SEE ALSO
+       AeroUp project page : https://github.com/LaurentBa/AeroUp
+       AeroWrite project page : https://github.com/LaurentBa/AeroWrite
+
+BUGS
+       No known bugs.
+
+AUTHOR
+       Laurent Barattero (laurent@larueluberlu.net.in)
+
+0.8                                                                             December 2013                                                                          <B>man(1)</B>
+</PRE>
+<HR>
+<ADDRESS>
+Man(1) output converted with
+<a href="http://www.oac.uci.edu/indiv/ehood/man2html.html">man2html</a>
+</ADDRESS>
+</BODY>
+</HTML>
