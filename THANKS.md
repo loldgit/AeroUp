@@ -1,3 +1,4 @@
+```
 ////////////////////////////////////////////////////////////////////////////////////////
 //                                                                                    //
 //    Copyright (C) 2014 BARRATERO Laurent                                            //
@@ -18,11 +19,14 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.                  /////
 //                                                                                //////
 ////////////////////////////////////////////////////////////////////////////////////////
-
+```
 AeroUp THANKS file
 ==================
 
-Thanks to Sylvain Garnavault who gave me the low-level API for download sequences, that I failed. 
+----------------------------------------------------------------------------------------
+Thanks to Sylvain Garnavault,
+who gave me the low-level API for download sequences, that I failed. 
 
-  * (Garnav) Sylvain Garnavault   www.cieparabole.com
+  * (Garnav) - Sylvain Garnavault -  www.cieparabole.com
+----------------------------------------------------------------------------------------
 
