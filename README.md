@@ -26,6 +26,7 @@ Installation
 ```
  cd AeroUp
  ./configure
+ make
  sudo make install
 ```
 
