@@ -1,10 +1,8 @@
-README for AeroUp 0.8
+README for AeroUp 0.2
 =====================
 
 
 AeroUp is an open source and multiplatform tool to use with Ultimate (programmable light sequencing juggling props) from Aerotech Projects Ltd.
-
-See the file INSTALL for instructions on how to build and install.
 
 there is not yet support for microsoft Window, because as i working on the core part who'll become a shared lib,
 and there is no support for getoptlong for Window, as a gui is scheduled soon, i don't bother me.  
@@ -12,20 +10,33 @@ and there is no support for getoptlong for Window, as a gui is scheduled soon, i
 
 Features 
 ========
-*[x] Start command 
-*[x] Test command
-*[x] Color command
-*[*] Get Serial Number command
+* Start command 
+* Test command
+* Color command
+* Get Serial Number command
 * Set Serial Number command
 * Upload glo sequences command
 * checks syntax of .glo files  
-* And some others features...
 
+multithread, multiplatform gui,  and some others original features coming soon...
+
+
+Installation
+============
+./configure
+sudo make install
+if you have boost library it will use it.
+but it should not be a problem if you don't have it.
+
+Documentation
+=============
+man aeroup 
+or look at the man folder.
 
 Links
 =====
 * Github page : https://github.com/LaurentBa/AeroUp
 * http://www.aerotechprojects.com/index.htm
 
-note : yet there is no support for microsoft Window, because as i working on the core part 
+note : there will be no support for microsoft Window before version 1  
 
