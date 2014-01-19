@@ -32,6 +32,8 @@
 #include <stdlib.h>
 #include "ultimate.hpp"
 
+extern bool VERBOSE_AERO;
+
 using namespace std;   
 
 Ultimate::Ultimate ( string serial_name ):
@@ -115,23 +117,20 @@ Ultimate::uploadGlo ( string fileName)
  *      Method:  Ultimate :: setSerialUlt
  * Description:  
  */
-  void 
+  uint32_t
 Ultimate::setSerialUlt(uint32_t serialNumber)
 {
-  cout << serialNumber << endl;
   uint8_t ser_nb[6] = {83,0,0,0,0,0};
   
   ser_nb[4] = (uint8_t)((serialNumber & 0xff000000UL) >> 24);
   ser_nb[3] = (uint8_t)((serialNumber & 0x00ff0000UL) >> 16);
   ser_nb[2] = (uint8_t)((serialNumber & 0x0000ff00UL) >>  8);
   ser_nb[1] = (uint8_t)((serialNumber & 0x000000ffUL)      );
-  
-  for (int i = 0; i < 6; i++)
-  {
-    cout <<  (int)ser_nb[i] << endl;
-  }
+
   ser.serialNumber(ser_nb) ;
 
-  exit (EXIT_FAILURE);
+  return serialNumber;
+
+  //exit (EXIT_FAILURE);
 
 }

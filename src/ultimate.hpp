@@ -56,7 +56,7 @@ class Ultimate
     std::string getSerial();
     int uploadGlo(std::string file_name);
     int uploadGloc(std::string file_name);
-    void setSerialUlt(uint32_t serialNumber);
+    uint32_t setSerialUlt(uint32_t serialNumber);
 
   private:
     SerialProp ser;

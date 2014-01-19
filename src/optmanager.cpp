@@ -184,8 +184,16 @@ OptManager::sendGetSerial( std::string port_name)
   void
 OptManager::sendSetSerial(uint32_t i_serialNumber, string port)
 {
+  uint32_t ser_nb;
   Ultimate prop(port);
-  prop.setSerialUlt( i_serialNumber);
+  ser_nb = prop.setSerialUlt( i_serialNumber);
+
+  if (VERBOSE_AERO)
+  {
+    cout << "Serial number 0x" << hex << ser_nb
+         << " sent" << endl;
+  }
+
 }
 
 /*
@@ -394,13 +402,11 @@ OptManager::isValidSerialNumber(string strNb)
   {
     std::stringstream ss( strNb);
     ss >> dec >> i_ser_nb;
-    cout << i_ser_nb << endl;
   }
   else if(isHexNotation( strNb))
   {
     std::stringstream ss( strNb.substr(2));
     ss >> hex >> i_ser_nb;
-    cout << i_ser_nb << endl;
   }
   else
   {
