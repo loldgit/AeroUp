@@ -1,5 +1,5 @@
-README for AeroUp 0.2
-=====================
+README for AeroUp 0.3.0
+=======================
 
 
 AeroUp is an open source and multiplatform tool to control Ultimate (programmable light sequencing juggling props) from Aerotech Projects.
@@ -16,6 +16,7 @@ Features
 * Get Serial Number command
 * Set Serial Number command
 * Upload glo sequences command
+* improved driver (udev linux)
 * checks syntax of .glo files  
 
 multithread, multiplatform gui,  and some others original features coming soon...

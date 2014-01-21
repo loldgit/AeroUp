@@ -23,7 +23,7 @@
  *                  lib getopt needed this is for unix users
  *
  *
- *        Version:  0.2
+ *        Version:  0.3.0.1
  *        Created:  20/12/2013 00:57:44
  *       Revision:  none
  *       Compiler:  gcc
@@ -80,6 +80,7 @@ main ( int argc, char *argv[] )
       {"verify", required_argument,    NULL, 'i'},
       {"uploadGlo", required_argument, NULL, 'u'},
       {"uploadGloc", no_argument,      NULL, 'U'},
+      {"symlink", no_argument,         NULL, 'k'},
       {"verbose", no_argument,         NULL, 'v'},
       {"thread", no_argument,          NULL,  1 },
       {"version", no_argument,     &version,  1 },
@@ -88,7 +89,7 @@ main ( int argc, char *argv[] )
     };
     /* getopt_long stores the option index here. */
     int option_index = 0;
-    c = getopt_long (argc, argv, "o:t:c:G:S:u:U:i:vh",
+    c = getopt_long (argc, argv, "o:t:c:G:S:u:U:k:i:vh",
                      long_options, &option_index);
 
     /* Detect the end of the options. */
@@ -145,6 +146,10 @@ main ( int argc, char *argv[] )
        manager.subRoutine(FLAG_UP_GLOC);
        break;
 
+     case 'k':
+       manager.addItemSymlink(optarg);
+       break;
+
      case 'v':
        VERBOSE_AERO = true;
        break;
@@ -196,6 +201,12 @@ main ( int argc, char *argv[] )
   {
     return(EXIT_FAILURE);
   }
+  catch( Symlink::Bad_Symlink )
+  {
+    cerr << "Error : Bad Symlink input\n"
+         << "'$man aeroup' section 'Improved management driver' may be help you\n";
+    return(EXIT_FAILURE);
+  }
   catch(...)
   {
     //return(EXIT_FAILURE);
@@ -221,14 +232,16 @@ aeroHelp()
        << "  -c, --color=R,G,B,serialPort              Send a color command on dev serialPort.\n"
        << "                                            R,G,B can be hex (0x#), dec (#) value,\n"
        << "                                            in range of [0-255] (8bit).\n"
-       << "  -G, --getSerial=serialPort                get serial number on dev serialPort, and print it to standard output.\n"
+       << "  -G, --getSerial=serialPort                Get serial number on dev serialPort, and print it to standard output.\n"
        << "  -S, --setSerial=serialNumber,serialPort   Set serialNumber on dev serialPort. the 32 bits serialNumber value\n"
        << "                                            can be writen in hex (0x#) or dec (#).\n"
        << "  -i, --verify=gloFile                      Verify that syntax glo file is valid.\n"
-       << "  -u, --uploadGloc=gloFile,serialPort       Verify that syntax glo file is valid, and if this is the case\n"
+       << "  -k --symlink                              Return the serial name used as symlink of kernel name by udev.\n" 
+       << "                                            More info in the AeroUp man.\n"
+       << "  -u, --uploadGloc=gloFile,serialPort       Verify that syntax glo file is valid, and if this is the case,\n"
        << "                                            upload it on dev serialPort.\n"
        << "  -P, --thread                              Multithread mode, not implemented yet...\n"
-       << "  -U, --uploadGloc=glocFile,serialPort      not implemented yet...\n"
+       << "  -U, --uploadGloc=glocFile,serialPort      Not implemented yet...\n"
        << "  -v                                        Verbose mode.\n"
        << "  -h, --help                                Print help.\n"
        << "      --version                             Print version.\n\n"

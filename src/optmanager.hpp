@@ -21,7 +21,7 @@
  *
  *    Description:  
  *
- *        Version:  0.2
+ *        Version:  0.3.0.1
  *        Created:  23/12/2013 22:59:22
  *       Revision:  none
  *       Compiler:  gcc
@@ -39,9 +39,11 @@
 #include <getopt.h>
 #include <string>
 #include <vector>
+
 #include "global.hpp"
 #include "ultimate.hpp"
 #include "gloInterface.hpp"
+#include "symlink.hpp"
 
 #define MAX_LEN_OPT 2
 
@@ -50,6 +52,7 @@
 #define FLAG_UP_GLOC  0x4
 #define FLAG_COLOR    0x8
 #define FLAG_VERIFY   0x10
+#define FLAG_SYMLINK  0x20
 
 /*
  *        Class:  OptManager
@@ -74,6 +77,9 @@ class OptManager
     void addItemVerify(std::string glo_file)
                 {verifyList.push_back(glo_file);}
 
+    void addItemSymlink(std::string port_name)
+                {symlinkList.push_back(port_name);}
+
     void subRoutine(const short int FLAG);
 
   private:
@@ -82,6 +88,7 @@ class OptManager
     void sendStart(std::string port_name);
     void sendColor(uint8_t red, uint8_t green, uint8_t blue, std::string port_name);
     void sendGetSerial(std::string port_name); 
+    void sendSymlink(std::string port_name); 
     void sendSetSerial(uint32_t i_serialNumber, std::string port);
     void sendVerify(std::string fileName);
     void sendUpGlo(std::string fileName, std::string port);
@@ -134,6 +141,7 @@ class OptManager
     std::vector<std::string> verifyList; 
     std::vector<optSerial> setSerialList; 
     std::vector<std::string> getSerialList;
+    std::vector<std::string> symlinkList;
     // end of Structures and variables for opts containers 
 
 }; /* -----  end of class OptManager  ----- */

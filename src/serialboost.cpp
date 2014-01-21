@@ -21,7 +21,7 @@
  *
  *    Description:  
  *
- *        Version:  0.2
+ *        Version:  0.3.0.1
  *        Created:  20/12/2013 00:06:15
  *       Revision:  none
  *       Compiler:  gcc
@@ -32,7 +32,7 @@
 #include <serialboost.hpp>
 
 using namespace std;
-using namespace boost;
+//using namespace boost;
 
 
 /*
@@ -53,7 +53,7 @@ SerialBoost::SerialBoost ( std::string port_name ):
         throw;
   }
 
-  typedef asio::serial_port_base asio_serial;
+  typedef boost::asio::serial_port_base asio_serial;
   port.set_option(asio_serial::baud_rate(19200));
   port.set_option(asio_serial::flow_control(asio_serial::flow_control::none));
   port.set_option(asio_serial::parity( asio_serial::parity::none));
@@ -88,7 +88,7 @@ SerialBoost::~SerialBoost (  )
   void
 SerialBoost::sendChar(char c)
 {
-    port.write_some(asio::buffer(&c, 1));
+    port.write_some(boost::asio::buffer(&c, 1));
 }
 
 /*
@@ -100,7 +100,7 @@ SerialBoost::sendChar(char c)
   void
 SerialBoost::sendChar(unsigned char c)
 {
-    port.write_some(asio::buffer(&c, 1));
+    port.write_some(boost::asio::buffer(&c, 1));
 
 }
 
@@ -117,7 +117,7 @@ SerialBoost::sendChar(unsigned char c)
   void
 SerialBoost::sendString(char* s, int nb_char)
 {
-  port.write_some(asio::buffer(s, nb_char));
+  port.write_some(boost::asio::buffer(s, nb_char));
 }
 
 /*
@@ -129,7 +129,7 @@ SerialBoost::sendString(char* s, int nb_char)
   void
 SerialBoost::sendString(unsigned char* s, int nb_char)
 {
-  port.write_some(asio::buffer(s, nb_char));
+  port.write_some(boost::asio::buffer(s, nb_char));
 }
   
 /*               
@@ -141,7 +141,7 @@ SerialBoost::sendString(unsigned char* s, int nb_char)
   void
 SerialBoost::sendString(const char* s, int nb_char)
 {
-  port.write_some(asio::buffer(s, nb_char));
+  port.write_some(boost::asio::buffer(s, nb_char));
 }
 
 /*               
@@ -153,7 +153,7 @@ SerialBoost::sendString(const char* s, int nb_char)
   void 
 SerialBoost::sendString(string s)
 {
-  port.write_some(asio::buffer(s.c_str(),s.size()));
+  port.write_some(boost::asio::buffer(s.c_str(),s.size()));
 }
 
 /** 
@@ -173,7 +173,7 @@ SerialBoost::readLine()
   string result;
     for(;;)
     {
-      asio::read(port, asio::buffer(&c,1));
+      boost::asio::read(port, boost::asio::buffer(&c,1));
       switch(c)
       {
         case '\r':
@@ -194,7 +194,7 @@ SerialBoost::readLine()
  */
 void SerialBoost::getString(char* s, int nb_char)
 {
-  asio::read(port, asio::buffer(s, nb_char));
+  boost::asio::read(port, boost::asio::buffer(s, nb_char));
 }
 
 

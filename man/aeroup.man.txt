@@ -1,4 +1,4 @@
-man(1)                                                                         AeroUp man page                                                                         man(1)
+man(1)                             AeroUp man page                             man(1)
 
 
 
@@ -7,13 +7,15 @@ NAME
 
 
 SYNOPSIS
-       aeroup  [-t  serialPort]  [-o  serialPort]  [-c red,green,blue,serialPort] [-G serialPort] [-S serialNumber,serialPort] [-i gloFile] [-u gloFile,serialPort] [-U gloc‐
-       File,serialPort] [-P] [-v] [-h]
+       aeroup  [-t  serialPort]  [-o  serialPort]  [-c red,green,blue,serialPort] [-G
+       serialPort] [-S serialNumber,serialPort] [-i gloFile] [-u  gloFile,serialPort]
+       [-U glocFile,serialPort] [-P] [-v] [-h]
 
 
 
 DESCRIPTION
-       AeroUp is an open source command line tool to use with Ultimate (programmable light sequencing juggling props) from Aerotech Projects.
+       AeroUp  is  an open source command line tool to control Ultimate (programmable
+       light sequencing juggling props) from Aerotech Projects.
 
 
 OPTIONS
@@ -27,7 +29,6 @@ OPTIONS
 
        -c, --color=red,green,blue,serialPort
               Send a color command on dev serialPort.
-              Each sub options have to be separate with a comma without blank.
               Colors red, green, blue can be hexadecimal or decimal value in range of [0-255]
               hex value have to begin with 0x.
 
@@ -36,24 +37,57 @@ OPTIONS
               get serial number on dev serialPort, and print it to standard output.
 
 
+
        -S, --setSerial=serialNumber,serialPort
               Set serialNumber on dev serialPort.
-              32 bits value can be writen in hexadecimal (0x#) binary (0b#) or decimal (#).
+              32 bits value can be writen in hexadecimal (0x#) or decimal (#).
 
 
        -i, --verify=gloFile
               Verify that syntax glo file is valid
 
 
-       -u, --verify=gloFile,serialPort
-              Verify that syntax glo file is valid and if this is the case upload it on dev serialPort
+       -u, --uploadGlo=gloFile,serialPort
+              Verify that syntax glo file is valid and if this is the case upload  it
+              on dev serialPort
+
+
+
+       -k --symlink
+              return  the  serial  name  used as symlink of kernel name by udev (work
+              with linux only). see the improved  management  driver  section  below.
+              But  you can also use this command to retrieve an more readable id than
+              serial number.
+
+
+       Improved management driver (linux only)
+              note: you may need to update to last   bootloader  (aeroup  was  tested
+              with  Club_Ball_Poi_V2.3.hex).  you 'll find it on the Aerotech ltd web
+              page.
+
+              To use the system management driver, you first need to set the apropri‐
+              ate  serial  number in your props with the --setSerial option. (See the
+              address table belowx).  And put the file aeroup.rule to your udev rules
+              directory  if  it  wasn't done during installation.  When you plug your
+              props you should now have a corresponding symlink to your  /dev  direc‐
+              tory.
+
+              ================================================
+                Props | Range adress  | id char | Symlinks
+              ================================================
+                Ball  | 0.0.98.0/24   | b       | /dev/Ball#
+                Staff | 0.0.115.0/24  | s       | /dev/Staff#
+                Club  | 0.0.99.0/24   | c       | /dev/Club#
+                Poi   | 0:0:112:0/24  | p       | /Poi/Poi#
+              ================================================
+
 
 
        -P, --thread
               Multithread mode, not implemented yet...
 
 
-       -u, --verify=glocFile,serialPort
+       -U, --uploadGloc=glocFile,serialPort
               not implemented yet...
 
 
@@ -66,6 +100,10 @@ OPTIONS
 
        --version
               Print version
+
+       The last bootloader V2.3 from Aerotech needs to be installed first to use Serial number features.
+       Each sub options have to be separate with a comma without blank.
+
 
 
 EXAMPLES
@@ -81,15 +119,23 @@ SEE ALSO
        AeroUp project page : https://github.com/LaurentBa/AeroUp
        AeroWrite project page : https://github.com/LaurentBa/AeroWrite
 
-
-
-BUGS
-       No known bugs.
-
-
 AUTHOR
-       Laurent Barattero (laurent@larueluberlu.net.in)
+       Written by Laurent Barattero (laurent@larueluberlu.net.in)
+
+
+COPYRIGHT
+       Copyright © 2013 BARATTERO Laurent License GPLv3+: GNU GPL  version 3 or later
+       <http://gnu.org/licenses/gpl.html>.
+       This  is  free software: you are free to change and redistribute it.  There is
+       NO WARRANTY, to the extent permitted by law.
 
 
 
-0.8                                                                             December 2013                                                                          man(1)
+
+
+
+
+
+
+
+0.8                                 December 2013                              man(1)

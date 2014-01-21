@@ -53,14 +53,40 @@ Set \fIserialNumber\fR on dev \fIserialPort\fR.
 .fi
 
 .TP
-.nf
 \fB\-i\fR, \fB\-\-verify\fR=\fIgloFile\fR
 Verify that syntax glo file is valid
 
 .TP
-.nf
 \fB\-u\fR, \fB\-\-uploadGlo\fR=\fIgloFile\fR,\fIserialPort\fR
 Verify that syntax glo file is valid and if this is the case upload it on dev \fIserialPort\fR
+
+
+.TP
+\fB\-k\fR \fB\-\-symlink\fR 
+return the serial name used as symlink of kernel name by udev (work with linux only). see the improved management driver section below.
+But you can also use this command to retrieve an more readable id than serial number.
+
+.TP
+Improved management driver (linux only)
+note: you may need to update to last  bootloader (aeroup was tested with Club_Ball_Poi_V2.3.hex).
+you 'll find it on the Aerotech ltd web page.
+
+To use the system management driver, you first need to set the apropriate serial number
+in your props with the --setSerial option. (See the address table belowx).
+And put the file aeroup.rule to your udev rules directory if it wasn't done during installation.
+When you plug your props you should now have a corresponding symlink to your /dev directory.
+
+.nf
+================================================
+  Props | Range adress  | id char | Symlinks  
+================================================
+  Ball  | 0.0.98.0/24   | b       | /dev/Ball#   
+  Staff | 0.0.115.0/24  | s       | /dev/Staff#
+  Club  | 0.0.99.0/24   | c       | /dev/Club#    
+  Poi   | 0:0:112:0/24  | p       | /Poi/Poi#
+================================================
+.fi
+
 
 .TP
 .nf
@@ -120,4 +146,10 @@ License GPLv3+: GNU GPL  version 3 or later <http://gnu.org/licenses/gpl.html>.
 .br
 This  is  free software: you are free to change and redistribute it.
 There is NO WARRANTY, to the extent permitted by law.
+
+
+
+
+
+
 

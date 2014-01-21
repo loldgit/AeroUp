@@ -21,7 +21,7 @@
  *
  *    Description:  
  *
- *        Version:  0.2
+ *        Version:  0.3.0.1
  *        Created:  19/12/2013 05:22:37
  *       Revision:  none
  *       Compiler:  gcc
@@ -34,7 +34,7 @@
 
 
 using namespace std;
-using namespace boost;
+//using namespace boost;
 
 RegBoost::RegBoost (  )
 {
@@ -47,7 +47,7 @@ RegBoost::isValidSyntax ( string &rline )
 {
   for (int i = 0; i < REG_TAB_LEN; i++)
   {
-    if ( regex_match(rline.begin(), rline.end(), reg_tab[i]) ) 
+    if ( boost::regex_match(rline.begin(), rline.end(), reg_tab[i]) ) 
     {
       #ifdef DEBUG
       cout << rline << " -> ok" << endl;

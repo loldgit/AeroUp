@@ -5,7 +5,7 @@
 
 AC_PREREQ([2.69])
 AC_CONFIG_AUX_DIR([build-aux])
-AC_INIT([AeroUp], [0.2], [laurentba<at>larueluberlu.net], , [https://github.com/LaurentBa/AeroUp])
+AC_INIT([AeroUp], [0.3.0], [laurentba<at>larueluberlu.net], , [https://github.com/LaurentBa/AeroUp])
 AM_INIT_AUTOMAKE
 AC_CONFIG_SRCDIR([src/global.hpp])
 AC_CONFIG_HEADERS([src/config.h])
@@ -78,9 +78,18 @@ AC_CHECK_FUNCS([memset regcomp strtol])
 AC_CHECK_FUNCS([bzero memset strtol])
 
 AC_CONFIG_FILES([Makefile
-                 src/Makefile])
+                 src/Makefile
+                 udev/Makefile])
+
 
 AM_CONDITIONAL([BOOST], [test "$HAVE_BOOST_REGEX" = yes])
+
+# UDEV
+AC_MSG_CHECKING([For Udev])
+AM_CONDITIONAL([UDEV], [test -d "/etc/udev/rules.d" ])
+AM_COND_IF([UDEV], [AC_MSG_RESULT(["yes"])], [AC_MSG_RESULT(["no"])])
+
+
 
 AC_OUTPUT
 

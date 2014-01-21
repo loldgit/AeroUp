@@ -27,7 +27,7 @@
  *                  for the time being, the value is set to max.
  *                  we could test string before conversion.
  *
- *        Version:  0.2
+ *        Version:  0.3.0.1
  *        Created:  23/12/2013 23:31:46
  *       Revision:  none
  *       Compiler:  gcc
@@ -112,6 +112,13 @@ OptManager::start()
     sendGetSerial(*iter);
   }
 
+  // Symlink
+  for (vector<string>::iterator iter = symlinkList.begin();
+                      iter != symlinkList.end(); ++iter)
+  {
+    sendSymlink(*iter);
+  }
+
   // Set serial number
   for (vector<optSerial>::iterator iter = setSerialList.begin();
                       iter != setSerialList.end(); ++iter)
@@ -178,6 +185,20 @@ OptManager::sendGetSerial( std::string port_name)
           
 }
 
+/*
+ *      Method:  OptManager :: sendSymlink
+ */
+  void 
+OptManager::sendSymlink( std::string port_name)
+{
+  string sym_out;
+  Ultimate prop(port_name);
+  string serial_number = prop.getSerial();
+  sym_out = Symlink::getSym(serial_number);
+  cout << sym_out << endl;
+
+          
+}
 /*
  *      Method:  OptManager :: sendSetSerial
  */

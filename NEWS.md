@@ -27,3 +27,5 @@ AeroUp NEWS file
 
   * ( commit first version on github )         
   
+### AeroUp news for 0.3.0 :
+  * add improved driver support ( with udev linux )

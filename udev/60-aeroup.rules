@@ -1,0 +1,7 @@
+ATTRS{idProduct}=="000a", PROGRAM="/usr/local/bin/aeroup -k /dev/%k", SYMLINK+="%c"
+
+#PROGRAM="/usr/local/bin/aeroup -G /dev/%k", SYMLINK+="%c"
+#ATTRS{idProduct}=="000a"
+#ATTRS{idVendor}=="04d8"
+#ATTRS{manufacturer}=="Microchip Technology Inc."
+#ATTRS{product}=="Aerotech Glo-Ultimate    "

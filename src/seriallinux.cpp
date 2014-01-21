@@ -22,7 +22,7 @@
  *    Description:  Serial lib linux (termios version)
  *                  used if haven't boost
  *
- *        Version:  0.2
+ *        Version:  0.3.0.1
  *        Created:  17/01/2014 03:31:32
  *       Revision:  none
  *       Compiler:  gcc

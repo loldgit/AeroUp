@@ -633,6 +633,8 @@ ac_subst_vars='am__EXEEXT_FALSE
 am__EXEEXT_TRUE
 LTLIBOBJS
 LIBOBJS
+UDEV_FALSE
+UDEV_TRUE
 BOOST_FALSE
 BOOST_TRUE
 EGREP
@@ -5385,7 +5387,8 @@ fi
 done
 
 
-ac_config_files="$ac_config_files Makefile src/Makefile"
+ac_config_files="$ac_config_files Makefile src/Makefile udev/Makefile"
+
 
 
  if test "$HAVE_BOOST_REGEX" = yes; then
@@ -5395,6 +5398,27 @@ else
   BOOST_TRUE='#'
   BOOST_FALSE=
 fi
+
+
+# UDEV
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking For Udev" >&5
+$as_echo_n "checking For Udev... " >&6; }
+ if test -d "/etc/udev/rules.d" ; then
+  UDEV_TRUE=
+  UDEV_FALSE='#'
+else
+  UDEV_TRUE='#'
+  UDEV_FALSE=
+fi
+
+if test -z "$UDEV_TRUE"; then :
+  { $as_echo "$as_me:${as_lineno-$LINENO}: result: \"yes\"" >&5
+$as_echo "\"yes\"" >&6; }
+else
+  { $as_echo "$as_me:${as_lineno-$LINENO}: result: \"no\"" >&5
+$as_echo "\"no\"" >&6; }
+fi
+
 
 
 cat >confcache <<\_ACEOF
@@ -5536,6 +5560,10 @@ Usually this means the macro was only invoked conditionally." "$LINENO" 5
 fi
 if test -z "${BOOST_TRUE}" && test -z "${BOOST_FALSE}"; then
   as_fn_error $? "conditional \"BOOST\" was never defined.
+Usually this means the macro was only invoked conditionally." "$LINENO" 5
+fi
+if test -z "${UDEV_TRUE}" && test -z "${UDEV_FALSE}"; then
+  as_fn_error $? "conditional \"UDEV\" was never defined.
 Usually this means the macro was only invoked conditionally." "$LINENO" 5
 fi
 
@@ -6135,6 +6163,7 @@ do
     "depfiles") CONFIG_COMMANDS="$CONFIG_COMMANDS depfiles" ;;
     "Makefile") CONFIG_FILES="$CONFIG_FILES Makefile" ;;
     "src/Makefile") CONFIG_FILES="$CONFIG_FILES src/Makefile" ;;
+    "udev/Makefile") CONFIG_FILES="$CONFIG_FILES udev/Makefile" ;;
 
   *) as_fn_error $? "invalid argument: \`$ac_config_target'" "$LINENO" 5;;
   esac

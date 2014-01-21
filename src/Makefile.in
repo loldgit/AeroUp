@@ -95,8 +95,8 @@ am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
 am__aeroup_SOURCES_DIST = main.cpp ultimate.cpp serialprop.cpp \
 	optmanager.cpp gloseq.cpp buffer.cpp buffermanager.cpp \
-	rules.cpp serialboost.cpp regboost.cpp reglinux.cpp \
-	seriallinux.cpp
+	rules.cpp symlink.cpp serialboost.cpp regboost.cpp \
+	reglinux.cpp seriallinux.cpp
 @BOOST_TRUE@am__objects_1 = aeroup-serialboost.$(OBJEXT) \
 @BOOST_TRUE@	aeroup-regboost.$(OBJEXT)
 @BOOST_FALSE@am__objects_2 = aeroup-reglinux.$(OBJEXT) \
@@ -106,7 +106,7 @@ am_aeroup_OBJECTS = aeroup-main.$(OBJEXT) aeroup-ultimate.$(OBJEXT) \
 	aeroup-serialprop.$(OBJEXT) aeroup-optmanager.$(OBJEXT) \
 	aeroup-gloseq.$(OBJEXT) aeroup-buffer.$(OBJEXT) \
 	aeroup-buffermanager.$(OBJEXT) aeroup-rules.$(OBJEXT) \
-	$(am__objects_3)
+	aeroup-symlink.$(OBJEXT) $(am__objects_3)
 aeroup_OBJECTS = $(am_aeroup_OBJECTS)
 aeroup_LDADD = $(LDADD)
 aeroup_LINK = $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(aeroup_LDFLAGS) \
@@ -268,8 +268,7 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 ext_src = $(am__append_1) $(am__append_2)
 #echo have not boost
-aeroup_SOURCES = \
-								 main.cpp \
+aeroup_SOURCES = main.cpp \
 								 ultimate.cpp \
 								 serialprop.cpp \
 								 optmanager.cpp \
@@ -277,6 +276,7 @@ aeroup_SOURCES = \
 								 buffer.cpp \
 								 buffermanager.cpp \
 								 rules.cpp \
+								 symlink.cpp \
 								 ${ext_src}
 
 aeroup_CPPFLAGS = -W -Wall -std=c++11 
@@ -395,6 +395,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/aeroup-serialboost.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/aeroup-seriallinux.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/aeroup-serialprop.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/aeroup-symlink.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/aeroup-ultimate.Po@am__quote@
 
 .cpp.o:
@@ -522,6 +523,20 @@ aeroup-rules.obj: rules.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='rules.cpp' object='aeroup-rules.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(aeroup_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o aeroup-rules.obj `if test -f 'rules.cpp'; then $(CYGPATH_W) 'rules.cpp'; else $(CYGPATH_W) '$(srcdir)/rules.cpp'; fi`
+
+aeroup-symlink.o: symlink.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(aeroup_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT aeroup-symlink.o -MD -MP -MF $(DEPDIR)/aeroup-symlink.Tpo -c -o aeroup-symlink.o `test -f 'symlink.cpp' || echo '$(srcdir)/'`symlink.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/aeroup-symlink.Tpo $(DEPDIR)/aeroup-symlink.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='symlink.cpp' object='aeroup-symlink.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(aeroup_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o aeroup-symlink.o `test -f 'symlink.cpp' || echo '$(srcdir)/'`symlink.cpp
+
+aeroup-symlink.obj: symlink.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(aeroup_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT aeroup-symlink.obj -MD -MP -MF $(DEPDIR)/aeroup-symlink.Tpo -c -o aeroup-symlink.obj `if test -f 'symlink.cpp'; then $(CYGPATH_W) 'symlink.cpp'; else $(CYGPATH_W) '$(srcdir)/symlink.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/aeroup-symlink.Tpo $(DEPDIR)/aeroup-symlink.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='symlink.cpp' object='aeroup-symlink.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(aeroup_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o aeroup-symlink.obj `if test -f 'symlink.cpp'; then $(CYGPATH_W) 'symlink.cpp'; else $(CYGPATH_W) '$(srcdir)/symlink.cpp'; fi`
 
 aeroup-serialboost.o: serialboost.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(aeroup_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT aeroup-serialboost.o -MD -MP -MF $(DEPDIR)/aeroup-serialboost.Tpo -c -o aeroup-serialboost.o `test -f 'serialboost.cpp' || echo '$(srcdir)/'`serialboost.cpp
