@@ -57,7 +57,7 @@ Symlink::getSym(std::string serial_str)
     throw Symlink::Bad_Symlink();
   }
   //if (serialNumber > 0xffffffff)
-  if (serialNumber > 0x0)
+  if (serialNumber > 0xffffffff)
   {
     throw Symlink::Bad_Symlink();
   }
