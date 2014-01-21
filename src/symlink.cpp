@@ -65,16 +65,11 @@ Symlink::getSym(std::string serial_str)
   ss << std::hex << serial_str ;
   ss >> serialNumber;
 
-  // comment
-  //std::cout << serial_str;
-  //std::cout << serialNumber;
-
   if((serialNumber & 0xffff0000) != 0)
     Symlink::badSerNum();
 
   id_prob = ((PROB_MASK & serialNumber) >> 8 );
   num = (NUM_MASK & serialNumber);
-  
 
   ss << num;
   std::string x;
@@ -84,8 +79,6 @@ Symlink::getSym(std::string serial_str)
   // now we use serial_str for output
   serial_str = Symlink::whatProp(id_prob);
   serial_str += std::to_string(num);
-
-  //std::cout << serial_str;
     
   return serial_str;
 }
