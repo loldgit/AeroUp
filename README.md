@@ -16,8 +16,8 @@ Features
 * Get Serial Number command
 * Set Serial Number command
 * Upload glo sequences command
-* improved driver (udev linux)
-* checks syntax of .glo files  
+* Improved driver (udev linux)
+* Checks syntax of .glo files  
 
 multithread, multiplatform gui,  and some others original features coming soon...
 
