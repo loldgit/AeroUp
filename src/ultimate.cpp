@@ -21,7 +21,7 @@
  *
  *    Description:  Interface for Ultimate props
  *
- *        Version:  0.3.0.1
+ *        Version:  0.3.0
  *        Created:  19/12/2013 20:28:22
  *       Revision:  none
  *       Compiler:  gcc

@@ -21,7 +21,7 @@
  *
  *    Description:  
  *
- *        Version:  0.3.0.1
+ *        Version:  0.3.0
  *        Created:  19/12/2013 05:22:37
  *       Revision:  none
  *       Compiler:  gcc

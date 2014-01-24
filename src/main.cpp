@@ -23,7 +23,7 @@
  *                  lib getopt needed this is for unix users
  *
  *
- *        Version:  0.3.0.1
+ *        Version:  0.3.0
  *        Created:  20/12/2013 00:57:44
  *       Revision:  none
  *       Compiler:  gcc

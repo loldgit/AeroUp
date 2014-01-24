@@ -27,7 +27,7 @@
  *                  for the time being, the value is set to max.
  *                  we could test string before conversion.
  *
- *        Version:  0.3.0.1
+ *        Version:  0.3.0
  *        Created:  23/12/2013 23:31:46
  *       Revision:  none
  *       Compiler:  gcc
