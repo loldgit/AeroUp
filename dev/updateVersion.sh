@@ -1,4 +1,22 @@
 #!/bin/bash - 
+# 
+# Copyright (C) 2014 BARRATERO Laurent
+# 
+# AeroUp is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 3 of the License, or
+# (at your option) any later version.
+# 
+# Aeroup is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License along
+# with this program; if not, write to the Free Software Foundation, Inc.,
+# 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+# 
+ 
 #===============================================================================
 #
 #          FILE: updateVersion.sh
@@ -19,7 +37,7 @@
 #        AUTHOR: BARATTERO Laurent, laurentBa<at>larueluberlu.net
 #  ORGANIZATION: La rue Luberlu
 #       CREATED: 22/01/2014 03:14:03 CET
-#      REVISION:  0.1
+#      REVISION:  0.2
 #===============================================================================
 set -o nounset                              # Treat unset variables as an error
 
@@ -113,9 +131,8 @@ if [ $opt_update = 1 ]; then
   # Src Files
   for file in $(find $DIR/../src/ -name "*.cpp" -o -name "*.h*"); do
 
-    version=(sed -n  -e 's/\(^[[:blank:]]\*[[:blank:]]\+Version:[[:blank:]]\+\)\([[:digit:]]\+\.[[:digit:]]\+\(\.[[:digit:]]\+\)*\)\([[:blank:]]\+\)/\2/p' $file)
+    VERSION=(sed -n  -e 's/\(^[[:blank:]]\*[[:blank:]]\+Version:[[:blank:]]\+\)\([[:digit:]]\+\.[[:digit:]]\+\(\.[[:digit:]]\+\)*\)\([[:blank:]]\+\)/\2/p' $file)
     if [ "$NEW_VERSION" != "$VERSION"  ] ; then
-      echo "Update $README ? y/n"
       echo "Update "${file##*/../.}" ? y/n"
       yesOrNot
       if [ $answer == "y" ] ; then
@@ -127,8 +144,8 @@ if [ $opt_update = 1 ]; then
   else
     echo "No think do to"
   fi
-
   done
+
 fi	# ----------  end of opt_update  ----------
 
 if [ $opt_help = 1 ]; then
