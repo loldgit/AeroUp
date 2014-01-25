@@ -19,7 +19,7 @@ Features
 * Improved driver (udev linux)
 * Checks syntax of .glo files  
 
-multithread, multiplatform gui,  and some others original features coming soon...
+Multiplatform gui,  and some others original features coming soon...
 
 
 Installation
@@ -39,7 +39,8 @@ Documentation
 ```
 man aeroup 
 ```
-Or look at the man folder.
+Or look at the man folder :
+https://github.com/LaurentBa/AeroUp/blob/master/man/aeroup.man.txt
 
 Links
 =====
