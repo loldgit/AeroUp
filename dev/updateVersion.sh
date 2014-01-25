@@ -90,7 +90,6 @@ yesOrNot()
   fi
   stty_bak=$(stty -g)
   stty -icanon time 1 min 0 -echo
-  #while [ -z $answer ] ; do
   while [ "$answer" != "y"  -a "$answer" != "n" ]; do
     read answer
   done
