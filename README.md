@@ -25,6 +25,7 @@ Multiplatform gui,  and some others original features coming soon...
 Installation
 ============
 ```
+ git clone https://github.com/LaurentBa/AeroUp.git
  cd AeroUp
  ./configure
  make
