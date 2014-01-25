@@ -44,7 +44,7 @@ set -o nounset                              # Treat unset variables as an error
 # INIT
 ######
 SCRIPT_NAME="update_aero"
-SCRIPT_VERSION="0.1"
+SCRIPT_VERSION="0.2"
 
 Bold=`tput bold`
 EndBold=`tput sgr0`
