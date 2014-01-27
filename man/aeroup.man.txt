@@ -9,7 +9,7 @@ NAME
 SYNOPSIS
        aeroup  [-t  serialPort]  [-o  serialPort]  [-c red,green,blue,serialPort] [-G
        serialPort] [-S serialNumber,serialPort] [-i gloFile] [-u  gloFile,serialPort]
-       [-U glocFile,serialPort] [-P] [-v] [-h]
+       [-k serialPort] [-U glocFile,serialPort] [-P] [-v] [-h]
 
 
 
@@ -53,23 +53,21 @@ OPTIONS
 
 
 
-       -k --symlink
-              return  the  serial  name  used as symlink of kernel name by udev (work
-              with linux only). see the improved  management  driver  section  below.
-              But  you can also use this command to retrieve an more readable id than
-              serial number.
+       -k --symlink=serialPort
+              return the serial name used as symlink of kernel name by udev (work with linux only). see the improved management driver section below.
+              But you can also use this command to retrieve an more readable id than serial number.
 
 
        Improved management driver (linux only)
-              note: you may need to update to last   bootloader  (aeroup  was  tested
-              with  Club_Ball_Poi_V2.3.hex).  you 'll find it on the Aerotech ltd web
+              note:  you  may  need  to update to last  bootloader (aeroup was tested
+              with Club_Ball_Poi_V2.3.hex).  you 'll find it on the Aerotech ltd  web
               page.
 
               To use the system management driver, you first need to set the apropri‐
-              ate  serial  number in your props with the --setSerial option. (See the
+              ate serial number in your props with the --setSerial option.  (See  the
               address table belowx).  And put the file aeroup.rule to your udev rules
-              directory  if  it  wasn't done during installation.  When you plug your
-              props you should now have a corresponding symlink to your  /dev  direc‐
+              directory if it wasn't done during installation.  When  you  plug  your
+              props  you  should now have a corresponding symlink to your /dev direc‐
               tory.
 
               ================================================

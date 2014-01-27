@@ -11,7 +11,7 @@
 SYNOPSIS
        aeroup  [-t  serialPort]  [-o  serialPort]  [-c red,green,blue,serialPort] [-G
        serialPort] [-S serialNumber,serialPort] [-i gloFile] [-u  gloFile,serialPort]
-       [-U glocFile,serialPort] [-P] [-v] [-h]
+       [-k serialPort] [-U glocFile,serialPort] [-P] [-v] [-h]
 
 DESCRIPTION
        AeroUp  is  an open source command line tool to control Ultimate (programmable
@@ -43,12 +43,10 @@ OPTIONS
               Verify that syntax glo file is valid and if this is the case upload  it
               on dev serialPort
 
-       -k --symlink
-              return  the  serial  name  used as symlink of kernel name by udev (work
-              with linux only). see the improved  management  driver  section  below.
-              But  you can also use this command to retrieve an more readable id than
+       -k --symlink=serialPort
+              return the serial name used as symlink of kernel name by udev (work with linux only). see the improved management driver section below.
+              But you can also use this command to retrieve an more readable id than serial number.
 
-              ================================================
                 Props | Range adress  | id char | Symlinks
               ================================================
                 Ball  | 0.0.98.0/24   | b       | /dev/Ball#
@@ -88,8 +86,8 @@ SEE ALSO
 AUTHOR
        Written by Laurent Barattero (laurent@larueluberlu.net.in)
 
-
-0.8                                 December 2013                              <B>man(1)</B>
+COPYRIGHT
+       Copyright © 2013 BARATTERO Laurent License GPLv3+: GNU GPL  version 3 or later
 </PRE>
 <HR>
 <ADDRESS>

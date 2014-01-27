@@ -14,6 +14,7 @@ AeroUp
 [-S \fIserialNumber\fR,\fIserialPort\fR]
 [-i \fIgloFile\fR]
 [-u \fIgloFile\fR,\fIserialPort\fR]
+[-k \fIserialPort\fR]
 [-U \fIglocFile\fR,\fIserialPort\fR]
 [-P]
 [-v]
@@ -62,9 +63,11 @@ Verify that syntax glo file is valid and if this is the case upload it on dev \f
 
 
 .TP
-\fB\-k\fR \fB\-\-symlink\fR 
+\fB\-k\fR \fB\-\-symlink=\fIserialPort\fR 
+.nf
 return the serial name used as symlink of kernel name by udev (work with linux only). see the improved management driver section below.
 But you can also use this command to retrieve an more readable id than serial number.
+.fi
 
 .TP
 Improved management driver (linux only)
