@@ -98,75 +98,80 @@ main ( int argc, char *argv[] )
 
     switch (c)
     {
-     case 'o':
-       manager.addItemStart(optarg);
-       break;
+      case 0:
+        /* If this option set a flag, do nothing else now. */
+        if (long_options[option_index].flag != 0)
+        break;
 
-     case 't':
-       manager.addItemTest(optarg);
-       break;
+      case 'o':
+        manager.addItemStart(optarg);
+        break;
 
-     case 'c':
-       try
-       {
-         manager.subRoutine(FLAG_COLOR);
-       }
-       catch ( const string & Msg )
-       {
-         cerr << "Error : " << Msg << endl;
-         return(EXIT_FAILURE);
-       }
-       break;
+      case 't':
+        manager.addItemTest(optarg);
+        break;
 
-     case 'G':
-       manager.addItemGetSerial(optarg);
-       break;
+      case 'c':
+        try
+        {
+          manager.subRoutine(FLAG_COLOR);
+        }
+        catch ( const string & Msg )
+        {
+          cerr << "Error : " << Msg << endl;
+          return(EXIT_FAILURE);
+        }
+        break;
 
-     case 'S':
-       try
-       {
-       manager.subRoutine(FLAG_SET_SER);
-       }
-       catch ( const string & Msg )
-       {
-         cerr << "Error : " << Msg << endl;
-         return(EXIT_FAILURE);
-       }
-       break;
+      case 'G':
+        manager.addItemGetSerial(optarg);
+        break;
+
+      case 'S':
+        try
+        {
+          manager.subRoutine(FLAG_SET_SER);
+        }
+        catch ( const string & Msg )
+        {
+          cerr << "Error : " << Msg << endl;
+          return(EXIT_FAILURE);
+        }
+        break;
       
-     case 'i':
-       manager.addItemVerify(optarg);
-       break;
+      case 'i':
+        manager.addItemVerify(optarg);
+        break;
 
-     case 'u':
-       manager.subRoutine(FLAG_UP_GLO);
-       break;
+      case 'u':
+        manager.subRoutine(FLAG_UP_GLO);
+        break;
 
-     case 'U':
-       manager.subRoutine(FLAG_UP_GLOC);
-       break;
+      case 'U':
+        manager.subRoutine(FLAG_UP_GLOC);
+        break;
 
-     case 'k':
-       manager.addItemSymlink(optarg);
-       break;
+      case 'k':
+        manager.addItemSymlink(optarg);
+        break;
 
-     case 'v':
-       VERBOSE_AERO = true;
-       break;
+      case 'v':
+        VERBOSE_AERO = true;
+        break;
 
-     case 'h':
-       help = 1;
-       break;
+      case 'h':
+        help = 1;
+        break;
 
-     case '?':
-       /* getopt_long already printed an error message. */
-       puts("To get help : 'aeroup --help' or 'man aeroup'");
-       return EXIT_FAILURE;
-       break;
+      case '?':
+        /* getopt_long already printed an error message. */
+        puts("To get help : 'aeroup --help' or 'man aeroup'");
+        return EXIT_FAILURE;
+        break;
 
-     default:
-       abort ();
-     }
+      default:
+        abort ();
+    }
  }
      
   /* Print any remaining command line arguments (not options). */

@@ -5,7 +5,7 @@
 
 AC_PREREQ([2.69])
 AC_CONFIG_AUX_DIR([build-aux])
-AC_INIT([AeroUp], [0.3.0], [laurentba<at>larueluberlu.net], , [https://github.com/LaurentBa/AeroUp])
+AC_INIT([AeroUp], [0.3.1], [laurentba<at>larueluberlu.net], , [https://github.com/LaurentBa/AeroUp])
 AM_INIT_AUTOMAKE
 AC_CONFIG_SRCDIR([src/global.hpp])
 AC_CONFIG_HEADERS([src/config.h])
