@@ -22,7 +22,7 @@
  *    Description:  take the parsed, tokenized lines and manage them.
  *                  send also some rules test
  *
- *        Version:  0.3.0
+ *        Version:  0.3.2
  *        Created:  30/12/2013 12:12:46
  *       Revision:  none
  *       Compiler:  gcc

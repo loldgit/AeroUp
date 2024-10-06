@@ -3,9 +3,9 @@
 #---------------------------------------------------------------
 # current file Writing, the test are very rudimentary !
 
-AC_PREREQ([2.69])
+AC_PREREQ([2.71])
 AC_CONFIG_AUX_DIR([build-aux])
-AC_INIT([AeroUp], [0.3.1], [laurentba<at>larueluberlu.net], , [https://github.com/LaurentBa/AeroUp])
+AC_INIT([AeroUp],[0.3.2],[laurentba<at>larueluberlu.net],[],[https://git.larueluberlu.net/AeroUp])
 AM_INIT_AUTOMAKE
 AC_CONFIG_SRCDIR([src/global.hpp])
 AC_CONFIG_HEADERS([src/config.h])
@@ -14,7 +14,7 @@ AC_COPYRIGHT([Copyright © 2014 BARATTERO Laurent\n
               <http://gnu.org/licenses/gpl.html>
               This is free software: you are free to change and redistribute it.\n
               There is NO WARRANTY, to the extent permitted by lawn])
-AC_REVISION([$Revision: 0.0 $]) 
+AC_REVISION([$Revision: 0.1 $]) 
 
 AC_DEFINE( [DEBUG], [1], [Define debug mod])
 
@@ -64,7 +64,6 @@ fi
 #AC_CHECK_LIB([pthread], [main])
 
 # Checks for header files.
-AC_HEADER_STDC
 AC_CHECK_HEADERS([fcntl.h stdlib.h string.h unistd.h])
 
 # Checks for typedefs, structures, and compiler characteristics.

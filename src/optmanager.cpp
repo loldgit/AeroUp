@@ -27,7 +27,7 @@
  *                  for the time being, the value is set to max.
  *                  we could test string before conversion.
  *
- *        Version:  0.3.0
+ *        Version:  0.3.2
  *        Created:  23/12/2013 23:31:46
  *       Revision:  none
  *       Compiler:  gcc
@@ -343,6 +343,7 @@ OptManager::subRoutineUp(const short int FLAG )
   {
     case FLAG_UP_GLO:
       upGloList.push_back(tmpOpt);
+      break;
     case FLAG_UP_GLOC:
       upGloCList.push_back(tmpOpt); 
       break;

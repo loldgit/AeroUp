@@ -29,3 +29,7 @@ AeroUp NEWS file
   
 ### AeroUp news for 0.3.0 :
   * add improved driver support ( with udev linux )
+
+### AeroUp news for 0.3.2 :
+  * Chiefly, fixed the bug that blocked the compilation.
+  * Also, update of atoreconf, readme, man, exemples, help...

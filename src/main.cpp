@@ -23,7 +23,7 @@
  *                  lib getopt needed this is for unix users
  *
  *
- *        Version:  0.3.0
+ *        Version:  0.3.2
  *        Created:  20/12/2013 00:57:44
  *       Revision:  none
  *       Compiler:  gcc
@@ -41,9 +41,9 @@
 
 #include <getopt.h>
 #include "global.hpp"
-#include	"main.hpp"
-#include	"optmanager.hpp"
-#include	"config.h"
+#include "main.hpp"
+#include "optmanager.hpp"
+#include "config.h"
 
 
 
@@ -245,21 +245,21 @@ aeroHelp()
        << "                                            More info in the AeroUp man.\n"
        << "  -u, --uploadGloc=gloFile,serialPort       Verify that syntax glo file is valid, and if this is the case,\n"
        << "                                            upload it on dev serialPort.\n"
-       << "  -P, --thread                              Multithread mode, not implemented yet...\n"
-       << "  -U, --uploadGloc=glocFile,serialPort      Not implemented yet...\n"
        << "  -v                                        Verbose mode.\n"
        << "  -h, --help                                Print help.\n"
        << "      --version                             Print version.\n\n"
        << "Each sub options have to be separate with a comma without blank.\n"
-       << "you 'll find more info in the man of aeroup.\n\n"
+       << "you 'll find more info in the man of aeroup :\n"
+       << "man aeroup\n\n"
        << "Examples\n"
        << "  aeroup -t /dev/ttyACM0\n"
        << "  aeroup -o /dev/ttyACM0 -o /dev/ttyACM1 -t /dev/ttyACM3\n"
        << "  aeroup -c 255,69,255,/dev/ttyACM0 27,3,7,/dev/ttyACM1\n"
-       << "  aeroup -S 0x0b01/dev/ttyACM0\n"
-       << "  aeroup -G /dev/ttyACM0\n\n"
-       << "AeroUp project page : " PACKAGE_URL << "\n"
-       << "You can also take a look at the AeroWrite project page https://github.com/LaurentBa/AeroWrite\n"
+       << "  aeroup -u path/to/file.glo,/dev/ttyACM0\n"
+       << "  aeroup -S 0x6301,/dev/ttyACM0\n"
+       << "  aeroup -G /dev/ttyACM0\n"
+       << "  aeroup -k /dev/ttyACM0\n\n"
+       << "AeroUp project git page : " PACKAGE_URL << "\n"
        << "Report bugs to " << PACKAGE_BUGREPORT << "\n"
        << endl;
 

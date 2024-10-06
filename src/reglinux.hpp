@@ -21,7 +21,7 @@
  *
  *    Description:  Regex lib (linux version)
  *
- *        Version:  0.3.0
+ *        Version:  0.3.2
  *        Created:  18/01/2014 01:16:31
  *       Revision:  none
  *       Compiler:  gcc

@@ -39,5 +39,5 @@ rm ../man/aeroup.man.txt
 rm ../man/aeroup.man.html
 
 man ../man/aeroup.man > ../man/aeroup.man.txt 
-man ../man/aeroup.man | man2html  -noheads  -title "AeroUp Man Page" -compress  > ../man/aeroup.man.html
+man ../man/aeroup.man | man2html  -noheads  -title "AeroUp Man Page" -compress > ../man/aeroup.man.html
 

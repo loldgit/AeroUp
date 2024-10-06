@@ -21,7 +21,7 @@
  *
  *    Description:  Return a beautiful Symlink for udev
  *
- *        Version:  0.3.0
+ *        Version:  0.3.2
  *        Created:  19/01/2014 14:51:08
  *       Revision:  none
  *       Compiler:  gcc

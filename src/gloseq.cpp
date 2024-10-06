@@ -21,7 +21,7 @@
  *
  *    Description:  
  *
- *        Version:  0.3.0
+ *        Version:  0.3.2
  *        Created:  27/12/2013 10:38:49
  *       Revision:  none
  *       Compiler:  gcc
@@ -81,7 +81,7 @@ GloSeq::verify ()
   #endif
 
   string line;
-  for(int nb_line = 1; getline(glofile, line) != 0; nb_line++)
+  for(int nb_line = 1; getline(glofile, line); nb_line++)
   {
     // cleaning each line
     cleanLine(line);
@@ -141,7 +141,7 @@ GloSeq::verify ()
       cerr << "Error : "<< nb_error <<" syntax error in " << file_name << endl;
     else
       cerr << "Error : "<< nb_error <<" syntax errors in " << file_name << endl;
-      throw;
+    throw;
   }
 
   /* step 3  */

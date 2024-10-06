@@ -1,21 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <HTML>
 <HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<meta name="generator" content="Manpage converted by man2html - see https://invisible-island.net/scripts/readme.html#others_scripts">
 <TITLE>AeroUp Man Page</TITLE>
 </HEAD>
 <BODY>
-<H1>AeroUp Man Page</H1>
-<HR>
+<H1 class="no-header">AeroUp Man Page</H1>
 <PRE>
-<!-- Manpage converted by man2html 3.0.1 -->
-
-SYNOPSIS
-       aeroup  [-t  serialPort]  [-o  serialPort]  [-c red,green,blue,serialPort] [-G
-       serialPort] [-S serialNumber,serialPort] [-i gloFile] [-u  gloFile,serialPort]
-       [-k serialPort] [-U glocFile,serialPort] [-P] [-v] [-h]
+       Port] [-S serialNumber,serialPort] [-i gloFile] [-u gloFile,serialPort] [-k  serial‐
+       Port] [-U glocFile,serialPort] [-P] [-v] [-h]
 
 DESCRIPTION
-       AeroUp  is  an open source command line tool to control Ultimate (programmable
-       light sequencing juggling props) from Aerotech Projects.
+       AeroUp  is  an open source command line tool to control Ultimate (programmable light
+       sequencing juggling props) from Aerotech Projects.
 
 OPTIONS
        -t, --test=serialPort
@@ -40,31 +38,31 @@ OPTIONS
               Verify that syntax glo file is valid
 
        -u, --uploadGlo=gloFile,serialPort
-              Verify that syntax glo file is valid and if this is the case upload  it
-              on dev serialPort
+              Verify that syntax glo file is valid and if this is the case upload it on dev
+              serialPort
 
        -k --symlink=serialPort
               return the serial name used as symlink of kernel name by udev (work with linux only). see the improved management driver section below.
               But you can also use this command to retrieve an more readable id than serial number.
 
-                Props | Range adress  | id char | Symlinks
-              ================================================
-                Ball  | 0.0.98.0/24   | b       | /dev/Ball#
-                Staff | 0.0.115.0/24  | s       | /dev/Staff#
-                Club  | 0.0.99.0/24   | c       | /dev/Club#
-                Poi   | 0:0:112:0/24  | p       | /Poi/Poi#
-              ================================================
+       Improved management driver (linux only)
+              note:  you  may  need  to  update to last  bootloader (aeroup was tested with
+              Club_Ball_Poi_V2.3.hex).  you 'll find it on the Aerotech ltd web page.
 
-       -P, --thread
-              Multithread mode, not implemented yet...
+              To use the system management driver, you first need to set the apropriate se‐
+              rial number in your props with the --setSerial option. (See the address table
+              belowx).  And put the file aeroup.rule to your udev  rules  directory  if  it
+              wasn't  done  during  installation.   When you plug your props you should now
+              have a corresponding symlink to your /dev directory.
 
-       -U, --uploadGloc=glocFile,serialPort
-              not implemented yet...
-
-       -v     Verbose mode
-
-       -h, --help
-              Print help
+              ==================================================
+                Props | Range adress  | id char  | Symlinks
+              ==================================================
+                Ball  | 0.0.98.0/24   | b (0x62) | /dev/Ball#
+                Staff | 0.0.115.0/24  | s (0x73) | /dev/Staff#
+  		Club  | 0.0.99.0/24   | c (0x63) | /dev/Club#
+                Poi   | 0:0:112:0/24  | p (0x70) | /Poi/Poi#
+              ==================================================
 
        --version
               Print version
@@ -73,26 +71,34 @@ OPTIONS
        Each sub options have to be separate with a comma without blank.
 
 EXAMPLES
+       # Test prop on /dev/ttyACM0
        aeroup -t /dev/ttyACM0
+       # Start props on /dev/ttyACM0 et /dev/tty/ACM1 and test /dev/tty/ACM3
        aeroup -o /dev/ttyACM0 -o /dev/ttyACM1 -t /dev/ttyACM3
-       aeroup -c 255,69,255,/dev/ttyACM0 27,3,7,/dev/ttyACM1
-       aeroup -S 0x0b01/dev/ttyACM0
+       # Set color to blue and red
+       aeroup -c O,O,255,/dev/ttyACM0 255,0,0,/dev/ttyACM1
+       # Upload file.glo to /devttyACMO
+       aeroup -u /path/to/file.glo,/dev/ttyACM0
+       # Set serial number 0x7002 to have a prop named Poi2
+       aeroup -S 0x7002,/dev/ttyACM0
+       # Verify your serial number is now : 0x7002
        aeroup -G /dev/ttyACM0
+       # Verify your serial name is Poi2
+       aeroup -k /dev/ttyACM0
 
 SEE ALSO
-       AeroUp project page : https://github.com/LaurentBa/AeroUp
-       AeroWrite project page : https://github.com/LaurentBa/AeroWrite
+       AeroUp project page : https://git.larueluberlu.net/AeroUp
 
 AUTHOR
-       Written by Laurent Barattero (laurent@larueluberlu.net.in)
+       Written by Laurent Barattero (laurent@larueluberlu.net)
 
 COPYRIGHT
-       Copyright © 2013 BARATTERO Laurent License GPLv3+: GNU GPL  version 3 or later
+       Copyright © 2013 BARATTERO Laurent License GPLv3+:  GNU  GPL   version  3  or  later
+       &lt;http://gnu.org/licenses/gpl.html&gt;.
+       This   is   free  software: you are free to change and redistribute it.  There is NO
+       WARRANTY, to the extent permitted by law.
+
+0.8                                    December 2013                                 <B>man(1)</B>
 </PRE>
-<HR>
-<ADDRESS>
-Man(1) output converted with
-<a href="http://www.oac.uci.edu/indiv/ehood/man2html.html">man2html</a>
-</ADDRESS>
 </BODY>
 </HTML>

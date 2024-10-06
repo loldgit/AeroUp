@@ -1,7 +1,7 @@
 ```
 ////////////////////////////////////////////////////////////////////////////////////////
 //                                                                                    //
-//    Copyright (C) 2014 BARRATERO Laurent                                            //
+//    Copyright (C) 2014 - BARRATERO Laurent                                          //
 //                                                                                    //
 //                                                                                    //
 //    This program is free software; you can redistribute it and/or modify            //
@@ -27,7 +27,7 @@ __BARATTERO Laurent__
       Company : La rue Luberlu       
       mail: laurentba<at>larueluberlu.net   
       web : http://larueluberlu.net   
-      github : https://github.com/LaurentBa   
+      git : https://git.larueluberlu.net 
  
 -------------------------------------------
   
